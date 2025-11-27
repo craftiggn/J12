@@ -2,6 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+filename = "J12_22Na.lst.lst"     # change to your file
+Title = "22Na"
+if len(Title) == 0:
+    Title = 'output'
+do_fit =1
+save_fig = 1
+point = 2050
+delta = 50
+a = point - delta
+b = point + delta
+
+
 def read_lst_data(filename):
     x_vals = []
     y_vals = []
@@ -73,16 +85,6 @@ def fit_gaussian(x, y, a, b):
 
 
 # ---------------- MAIN SCRIPT ----------------
-filename = "J12_137Cs.lst.lst"     # change to your file
-Title = "137Cs"
-if len(Title) == 0:
-    Title = 'output'
-do_fit =0
-save_fig = 0
-point = 1558
-delta = 100
-a = point - delta
-b = point + delta
 
 x, y = read_lst_data(filename)
 
@@ -119,7 +121,7 @@ if do_fit:
         # Smooth Gaussian line
         x_smooth = np.linspace(a, b, 400)
         y_smooth = gaussian(x_smooth, *params)
-        plt.plot(x_smooth, y_smooth, 'k:', label="Dopasowana dystrybucja Gaussa")
+        plt.plot(x_smooth, y_smooth, 'k:', label="Dopasowany rozkład Gaussa")
 
         # Text box
         fit_text = (
