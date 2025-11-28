@@ -169,7 +169,7 @@ if do_fit:
         fit_text = (
             f"μ = {mu_keV:.2f} ± {mu_keV_err:.2f} keV\n"
             f"σ = {sigma_keV:.2f} ± {sigma_err_ch/m:.2f} keV\n"
-            f"FWHM = {FWHM_keV:.1f} ± {FWHM_keV_err:.1f} keV"
+            f"FWHM = {FWHM_keV:.2f} ± {FWHM_keV_err:.2f} keV"
         )
 
         plt.gca().text(

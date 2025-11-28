@@ -2,16 +2,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
-filename = "J12_22Na.lst.lst"     # change to your file
-Title = "22Na"
+filename = "/home/marcel/Desktop/J12/J12_137Cs.lst.lst"     # change to your file
+Title = ""
+Title = "137Cs"
 if len(Title) == 0:
     Title = 'output'
-do_fit =1
+do_fit = 1
 save_fig = 1
-point = 2050
-delta = 50
-a = point - delta
-b = point + delta
+# point = 2050
+# delta = 50
+# a = point - delta
+# b = point + delta
+
+a = 1000
+b = 1100
+
 
 
 def read_lst_data(filename):
